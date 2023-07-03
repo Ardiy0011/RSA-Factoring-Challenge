@@ -1,22 +1,15 @@
 #!/usr/bin/python3
 
-import sys
-
 def factorize(n):
     return [(i, n // i) for i in range(2, n // 2 + 1) if n % i == 0]
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: factors <file>")
-        sys.exit(1)
-
-    with open(sys.argv[1]) as file:
+    with open("tests/test00") as file:
         lines = file.readlines()
 
-    for line in lines:
-        number = int(line.strip())
-        factorizations = factorize(number)
-        [print(f"{number}={p}*{q}") for p, q in factorizations]
+    for value in lines:
+        numss = int(value.strip())
+        facts = factorize(numss)
+        [print(f"{numss}={p}*{q}") for p, q in facts]
 
-if __name__ == "__main__":
-    main()
+main()
