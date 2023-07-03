@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-def factorize(n):
-    return [(i, n // i) for i in range(2, n // 2 + 1) if n % i == 0]
+def factorize(re):
+    return [(i, re // i) for i in range(2, re // 2 + 1) if re % i == 0]
 
 def main():
     with open("tests/test00") as file:
